@@ -1,0 +1,41 @@
+# Python
+__pycache__
+**/__pycache__/**
+*.pyc
+*.pyd
+*.pyo
+*.egg
+*.egg-info
+.python-version
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# FastAPI and other tools
+.mypy_cache/
+.pytest_cache/
+.coverage*
+htmlcov/
+dist/
+site/
+Pipfile.lock  # Ignore if you don't want to track lock file
+uv.lock      # Ignore if you don't want to track lock file
+test.db      # Example for a local test database file
+log.txt      # Example for a log file
+
+# IDE specific files
+.idea/       # JetBrains IDEs (PyCharm, etc)
+.vscode/     # VS Code
+
+# OS generated files
+.DS_Store    # macOS
+Thumbs.db    # Windows
+
+# Temporary files
+*~
+.*.sw?
+.cache/
