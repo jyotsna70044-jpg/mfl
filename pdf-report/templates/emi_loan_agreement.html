@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+
+<style>
+@page {
+    size: A4;
+    margin: 2cm;
+}
+
+@font-face {
+    font-family: 'Noto Serif Devanagari';
+    src: url('../fonts/NotoSerifDevanagari-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Noto Serif Devanagari';
+    src: url('../fonts/NotoSerifDevanagari-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+
+body {
+    font-family: 'Noto Serif Devanagari';
+    font-size: 11.5pt;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+h1 {
+    text-align: center;
+    font-size: 16pt;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: 13pt;
+    font-weight: 700;
+    text-decoration: underline;
+    margin-top: 20px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 6px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>व्यक्तिगत ऋण इकरारनामा</h1>
+
+<p>
+<span class="bold">ऋणदाता</span> :
+<strong>मिथिला फाइनेंस लिमिटेड</strong>, जो कि
+प्रवीण कुमार ठाकुर, पिता सूर्य नारायण ठाकुर,
+के स्वामित्व में है।
+</p>
+
+<p>
+<span class="bold">ऋणी</span> :
+{{ borrower_name }}, पिता {{ father_name }},
+पता: {{ address }},
+आधार: {{ aadhaar }},
+पैन: {{ pan }}
+</p>
+
+<p>
+यह ऋण इकरारनामा
+दिनांक {{ agreement_date }} से प्रभावी है।
+</p>
+
+<h2>नियम और शर्तें</h2>
+
+<table>
+<tr>
+<td class="bold">ऋण प्रकार</td>
+<td>मासिक किस्त</td>
+</tr>
+<tr>
+<td class="bold">मूल धन</td>
+<td>₹ {{ principal_amount }}</td>
+</tr>
+<tr>
+<td class="bold">मासिक किस्त</td>
+<td>₹ {{ monthly_amount }}</td>
+</tr>
+</table>
+
+<br><br>
+
+<table>
+<tr>
+<td>ऋणदाता हस्ताक्षर</td>
+<td>मैनेजर हस्ताक्षर</td>
+<td>ऋणी हस्ताक्षर</td>
+</tr>
+<tr>
+<td>प्रवीण कुमार ठाकुर</td>
+<td>भिखारी यादव</td>
+<td></td>
+</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy>=2.0
+aiosqlite
+asyncpg
+python-jose
+passlib[bcrypt]
+pydantic-settings
+
+greenlet
+pydantic[email]

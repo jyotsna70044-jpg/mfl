@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>व्यक्तिगत ऋण इकरारनामा</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+<h1>व्यक्तिगत ऋण इकरारनामा</h1>
+<p>
+    <span class="bold">ऋणदाता</span> :
+    <span class="bold">मिथिला फाइनेंस लिमिटेड</span>, जो कि प्रवीण कुमार ठाकुर, पिता सूर्य नारायण ठाकुर, के स्वामित्व
+    में है। मिथिला फाइनेंस लिमिटेड, वार्ड नंबर-4, गाँव-जिरौल, डाकघर-जिरौल, थाना-खिरहर, जिला-मधुबनी, राज्य-बिहार,
+    पिन-847230, पैन नंबर AJLPT5888P
+    के पते के साथ <span class="bold">“ऋणदाता”</span> के रूप में संदर्भित है|
+</p>
+<p>
+    <span class="bold">ऋणी</span> :
+    {{ borrower_name }}, पिता {{ borrower_father_name }},
+    पता: मुहल्ला - {{borrower_addr_muhalla}}, वार्ड नंबर – {{borrower_addr_ward_no}} ,गाँव -{{borrower_addr_village}},
+    डाकघर -{{borrower_addr_post_office}} पुलिस थाना -{{borrower_addr_police_station}}, जिला-{{borrower_addr_district}},
+    राज्य - बिहार, पिनकोड -{{borrower_addr_pincode}} ,
+    आधार {{ borrower_aadhaar }} और पैन कार्ड नंबर {{ borrower_pan }}
+    के साथ <span class="bold">“ऋणी”</span> के रूप में संदर्भित है।
+</p>
+<p>
+    यह ऋण इकरारनामा ऋणदाता एवं ऋणी के मध्य दिनांक <strong>{{ agreement_date }}</strong> से प्रभावी है।
+</p>
+<h2>नियम एवं शर्तें</h2>
+<h3>1. ऋण विवरण</h3>
+<table class="loan-table">
+    <tr>
+        <th>ऋण का उद्देश्य</th>
+        <td colspan="3">{{loan_objective}}</td>
+    </tr>
+    <tr>
+        <th>ऋण प्रकार</th>
+        <td colspan="3">{{loan_type}}</td>
+    </tr>
+    <tr>
+        <th>मूलधन</th>
+        <td colspan="3">Rs. {{loan_amount}}/--({{loan_amount_in_words}})</td>
+    </tr>
+    <tr>
+        <th>ऋण तिथि</th>
+        <td>{{loan_date}}</td>
+        <th>किस्तों की संख्या</th>
+        <td>{{tenure_emi_months}}</td>
+    </tr>
+    <tr>
+        <th>प्रथम भुगतान तिथि</th>
+        <td>{{first_emi_date}}</td>
+        <th>अंतिम भुगतान तिथि</th>
+        <td>{{last_emi_date}}</td>
+    </tr>
+    <tr>
+        <th>मासिक किस्त</th>
+        <td colspan="3">Rs. {{monthly_emi_amount}}/--({{monthly_emi_amount_in_words}})</td>
+    </tr>
+    <tr>
+        <th>देर भुगतान शुल्क</th>
+        <td colspan="3">
+            देर भुगतान पर मूलधन का 1%(Rs.{{emi_late_fine_amount}}) एवं मासिक किस्त मूलधन पर ब्याज
+            2.5%(Rs.{{emi_late_fine_interest_per_month}}) प्रति महीने ब्याज देना होगा।
+        </td>
+    </tr>
+</table>
+
+<h3>2. भुगतान शर्तें</h3>
+<p>
+    ऋणी प्रत्येक माह ₹ {{ monthly_emi_amount }} का भुगतान करेगा।
+    विलंब पर 1%(Rs.{{emi_late_fine_amount}}) दंड तथा 2.5%(Rs.{{emi_late_fine_interest_per_month}}) अतिरिक्त ब्याज देय
+    होगा।
+</p>
+
+<h3>3. मूलधन वापसी</h3>
+<p>
+    मूलधन {{ tenure_emi_months }} महीने में पूर्ण चुकाना अनिवार्य होगा।
+    असफलता की स्थिति में 5% मासिक चक्रवृद्धि ब्याज लागू होगा।
+</p>
+
+<h3>4. कानूनी प्रावधान</h3>
+<p>
+    यह इकरारनामा भारतीय संविदा अधिनियम 1872 के अधीन बाध्यकारी है।
+    न्याय क्षेत्र मधुबनी, बिहार होगा।
+</p>
+
+<h3>5. हस्ताक्षर</h3>
+<table class="signature-table">
+    <tr>
+        <th>तिथि</th>
+        <th>ऋणदाता हस्ताक्षर</th>
+        <th>प्रबंधक हस्ताक्षर</th>
+        <th>ऋणी हस्ताक्षर</th>
+        <th>गारंटर हस्ताक्षर</th>
+        <th>गवाह हस्ताक्षर</th>
+    </tr>
+    <tr>
+        <td>{{ agreement_date }}</td>
+        <td>प्रवीण कुमार ठाकुर</td>
+        <td>भिखारी यादव</td>
+        <td>{{borrower_name}}</td>
+        <td>{{grantor_name}}</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>{{ agreement_date }}</td>
+        <td>praveen</td>
+        <td>bhikhari</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+</body>
+</html>
